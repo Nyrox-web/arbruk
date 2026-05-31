@@ -1,35 +1,38 @@
 import Link from "next/link";
 
 export default function ArbrukPage() {
+  const phone = "734187333";
+  const phoneFormatted = "734 187 333";
+
   const services = [
     {
       title: "Układanie kostki brukowej",
-      desc: "Profesjonalne układanie kostki na podjazdach, chodnikach, placach i posesjach.",
+      desc: "Precyzyjne wykonanie podjazdów, chodników, placów i ścieżek z solidnym przygotowaniem podłoża.",
       icon: "▦",
     },
     {
-      title: "Podjazdy",
-      desc: "Trwałe i estetyczne podjazdy dopasowane do stylu domu oraz sposobu użytkowania.",
+      title: "Podjazdy i wjazdy",
+      desc: "Trwałe nawierzchnie pod auta osobowe i dostawcze, dopasowane do posesji i sposobu użytkowania.",
       icon: "▰",
     },
     {
-      title: "Tarasy",
-      desc: "Budowa tarasów z kostki brukowej i płyt betonowych pod strefę wypoczynku.",
+      title: "Tarasy i schody",
+      desc: "Estetyczne tarasy, wejścia do domu oraz schody z kostki, płyt i elementów betonowych.",
       icon: "◒",
     },
     {
-      title: "Chodniki",
-      desc: "Funkcjonalne chodniki i ścieżki ogrodowe wykonane z dbałością o detale.",
+      title: "Chodniki i alejki",
+      desc: "Funkcjonalne przejścia, alejki ogrodowe i dojścia do budynków wykonane z dbałością o detale.",
       icon: "≋",
     },
     {
-      title: "Obrzeża",
-      desc: "Montaż obrzeży betonowych, palisad i elementów wykończeniowych.",
+      title: "Obrzeża i palisady",
+      desc: "Montaż obrzeży, krawężników, palisad oraz elementów wykończeniowych nawierzchni.",
       icon: "▭",
     },
     {
       title: "Prace ziemne",
-      desc: "Korytowanie, niwelacja terenu, przygotowanie podłoża i wykopy.",
+      desc: "Korytowanie, niwelacja terenu, przygotowanie podbudowy i prace przygotowawcze.",
       icon: "⌁",
     },
   ];
@@ -37,26 +40,26 @@ export default function ArbrukPage() {
   const stats = [
     ["10+", "lat doświadczenia"],
     ["500+", "realizacji"],
-    ["100%", "jakości"],
+    ["100%", "dokładności"],
     ["24h", "szybka wycena"],
   ];
 
   const benefits = [
     {
-      title: "Doświadczenie",
-      desc: "Wykonaliśmy setki realizacji dla klientów prywatnych i firm.",
+      title: "Dokładność",
+      desc: "Każdy etap prac wykonujemy z dbałością o podłoże, spadki i estetykę wykończenia.",
     },
     {
-      title: "Profesjonalizm",
-      desc: "Pracujemy na sprawdzonych materiałach i nowoczesnym sprzęcie.",
-    },
-    {
-      title: "Gwarancja",
-      desc: "Dbamy o solidne wykonanie i trwałość nawierzchni na lata.",
+      title: "Solidne materiały",
+      desc: "Pracujemy na sprawdzonych rozwiązaniach, które zapewniają trwałość na lata.",
     },
     {
       title: "Terminowość",
-      desc: "Dotrzymujemy ustaleń i prowadzimy prace zgodnie z planem.",
+      desc: "Ustalamy konkretny zakres prac i realizujemy go zgodnie z planem.",
+    },
+    {
+      title: "Doradztwo",
+      desc: "Pomagamy dobrać układ, kolorystykę i rozwiązania najlepsze dla Twojej posesji.",
     },
   ];
 
@@ -68,14 +71,24 @@ export default function ArbrukPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white overflow-hidden">
-      <section className="relative min-h-screen">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(245,158,11,.22),transparent_30%),linear-gradient(120deg,rgba(0,0,0,.96),rgba(0,0,0,.72),rgba(0,0,0,.94))]" />
+    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+      <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
+
+        section {
+          scroll-margin-top: 90px;
+        }
+      `}</style>
+
+      <section id="start" className="relative min-h-screen">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(245,158,11,.25),transparent_32%),linear-gradient(120deg,rgba(0,0,0,.98),rgba(0,0,0,.72),rgba(0,0,0,.96))]" />
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-35" />
 
-        <header className="relative z-10 border-b border-white/10 bg-black/40 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-            <div className="flex items-center gap-4">
+        <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <a href="#start" className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 shadow-[0_0_35px_rgba(245,158,11,.18)]">
                 <span className="text-3xl font-black text-yellow-400">A</span>
               </div>
@@ -86,53 +99,50 @@ export default function ArbrukPage() {
                   Usługi brukarskie
                 </p>
               </div>
-            </div>
+            </a>
 
             <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-300 lg:flex">
-              <a href="#start" className="text-yellow-400">
+              <a href="#start" className="text-yellow-400 transition hover:text-yellow-300">
                 Start
               </a>
-              <a href="#onas" className="hover:text-yellow-400 transition">
+              <a href="#onas" className="transition hover:text-yellow-400">
                 O nas
               </a>
-              <a href="#uslugi" className="hover:text-yellow-400 transition">
+              <a href="#uslugi" className="transition hover:text-yellow-400">
                 Usługi
               </a>
-              <a href="#realizacje" className="hover:text-yellow-400 transition">
+              <a href="#realizacje" className="transition hover:text-yellow-400">
                 Realizacje
               </a>
-              <a href="#kontakt" className="hover:text-yellow-400 transition">
+              <a href="#kontakt" className="transition hover:text-yellow-400">
                 Kontakt
               </a>
             </nav>
 
             <a
-              href="tel:512123456"
+              href={`tel:${phone}`}
               className="hidden rounded-2xl border border-yellow-400/40 px-6 py-3 font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black md:inline-flex"
             >
-              ☎ 512 123 456
+              ☎ {phoneFormatted}
             </a>
           </div>
         </header>
 
-        <div
-          id="start"
-          className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:min-h-[calc(100vh-96px)] lg:grid-cols-[1.05fr_.95fr]"
-        >
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 pb-24 pt-40 lg:min-h-screen lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="mb-6 text-sm font-black uppercase tracking-[0.35em] text-yellow-400">
               Profesjonalne usługi brukarskie
             </p>
 
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-              Tworzymy nawierzchnie,{" "}
-              <span className="text-yellow-400">które przetrwają lata.</span>
+              Brukarstwo z dokładnością,{" "}
+              <span className="text-yellow-400">która zostaje na lata.</span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300">
-              Specjalizujemy się w układaniu kostki brukowej, tworzeniu
-              podjazdów, tarasów, chodników i pracach ziemnych. Stawiamy na
-              jakość, terminowość i perfekcyjne wykonanie.
+              Wykonujemy podjazdy, tarasy, chodniki, obrzeża i kompleksowe
+              nawierzchnie z kostki brukowej. Stawiamy na solidną podbudowę,
+              estetykę i terminowe wykonanie.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -158,7 +168,7 @@ export default function ArbrukPage() {
             <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur-xl">
               <div className="h-[520px] rounded-[34px] bg-[url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center" />
 
-              <div className="absolute bottom-10 left-10 right-10 rounded-3xl border border-white/10 bg-black/70 p-6 backdrop-blur">
+              <div className="absolute bottom-10 left-10 right-10 rounded-3xl border border-white/10 bg-black/75 p-6 backdrop-blur">
                 <p className="text-sm uppercase tracking-[0.25em] text-yellow-400">
                   Bezpłatna wycena
                 </p>
@@ -176,7 +186,7 @@ export default function ArbrukPage() {
           {stats.map(([number, label]) => (
             <div
               key={label}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-yellow-400/30"
             >
               <p className="text-4xl font-black text-yellow-400">{number}</p>
               <p className="mt-2 text-sm uppercase tracking-[0.2em] text-zinc-500">
@@ -195,21 +205,22 @@ export default function ArbrukPage() {
             </p>
 
             <h2 className="text-4xl font-black leading-tight md:text-6xl">
-              Solidne brukarstwo dla domów, firm i inwestycji.
+              Solidne wykonanie zaczyna się od dobrze przygotowanego podłoża.
             </h2>
           </div>
 
           <div className="space-y-6 text-lg leading-relaxed text-zinc-400">
             <p>
-              ARBRUK to firma brukarska nastawiona na trwałość, estetykę i
-              sprawną realizację. Doradzamy najlepsze rozwiązania, przygotowujemy
-              teren i wykonujemy nawierzchnie, które dobrze wyglądają oraz są
-              odporne na codzienne użytkowanie.
+              ARBRUK to firma brukarska wykonująca trwałe i estetyczne
+              nawierzchnie dla klientów prywatnych oraz firm. Każdą realizację
+              traktujemy indywidualnie — od przygotowania terenu, przez dobór
+              materiału, aż po dokładne wykończenie.
             </p>
 
             <p>
-              Obsługujemy klientów prywatnych i firmy — od małych chodników po
-              kompleksowe podjazdy, place i tarasy.
+              Naszym celem jest stworzenie nawierzchni, która nie tylko dobrze
+              wygląda, ale też wytrzymuje codzienne użytkowanie przez długie
+              lata.
             </p>
           </div>
         </div>
@@ -257,7 +268,7 @@ export default function ArbrukPage() {
             </p>
 
             <h2 className="text-4xl font-black md:text-6xl">
-              Zobacz nasze realizacje.
+              Zobacz przykładowe realizacje.
             </h2>
           </div>
 
@@ -307,16 +318,19 @@ export default function ArbrukPage() {
       <section className="border-y border-white/10 bg-zinc-950 px-6 py-28">
         <div className="mx-auto max-w-7xl">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
-            Dlaczego my?
+            Dlaczego ARBRUK?
           </p>
 
           <h2 className="max-w-4xl text-4xl font-black md:text-6xl">
-            Stawiamy na jakość i zadowolenie klientów.
+            Profesjonalna realizacja od pierwszego kontaktu do odbioru.
           </h2>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {benefits.map((benefit, index) => (
-              <div key={benefit.title} className="rounded-[30px] p-2">
+              <div
+                key={benefit.title}
+                className="rounded-[30px] border border-white/10 bg-black/40 p-7 transition hover:-translate-y-1 hover:border-yellow-400/30"
+              >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 text-xl font-black text-yellow-400">
                   0{index + 1}
                 </div>
@@ -334,7 +348,7 @@ export default function ArbrukPage() {
 
       <section id="kontakt" className="relative px-6 py-28">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/85" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 rounded-[44px] border border-white/10 bg-black/70 p-8 backdrop-blur-xl md:p-14 lg:grid-cols-[1fr_.9fr]">
           <div>
@@ -354,10 +368,10 @@ export default function ArbrukPage() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="tel:512123456"
+                href={`tel:${phone}`}
                 className="rounded-2xl bg-yellow-400 px-8 py-4 font-black text-black transition hover:scale-105"
               >
-                ☎ 512 123 456
+                ☎ {phoneFormatted}
               </a>
 
               <a
