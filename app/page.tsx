@@ -1,73 +1,54 @@
-import Link from "next/link";
-
 export default function ArbrukPage() {
   const phone = "734187333";
-  const phoneFormatted = "734 187 333";
+  const phoneText = "734 187 333";
 
   const services = [
     {
       title: "Układanie kostki brukowej",
-      desc: "Precyzyjne wykonanie podjazdów, chodników, placów i ścieżek z solidnym przygotowaniem podłoża.",
-      icon: "▦",
+      desc: "Podjazdy, place, chodniki i ścieżki wykonane z dbałością o podbudowę, spadki i estetykę.",
     },
     {
       title: "Podjazdy i wjazdy",
-      desc: "Trwałe nawierzchnie pod auta osobowe i dostawcze, dopasowane do posesji i sposobu użytkowania.",
-      icon: "▰",
+      desc: "Trwałe nawierzchnie pod auta osobowe i dostawcze, dopasowane do stylu posesji.",
     },
     {
       title: "Tarasy i schody",
-      desc: "Estetyczne tarasy, wejścia do domu oraz schody z kostki, płyt i elementów betonowych.",
-      icon: "◒",
+      desc: "Eleganckie tarasy, wejścia do domu i schody z kostki, płyt oraz elementów betonowych.",
     },
     {
       title: "Chodniki i alejki",
-      desc: "Funkcjonalne przejścia, alejki ogrodowe i dojścia do budynków wykonane z dbałością o detale.",
-      icon: "≋",
+      desc: "Funkcjonalne przejścia, alejki ogrodowe i dojścia do budynków.",
     },
     {
       title: "Obrzeża i palisady",
-      desc: "Montaż obrzeży, krawężników, palisad oraz elementów wykończeniowych nawierzchni.",
-      icon: "▭",
+      desc: "Montaż obrzeży, krawężników, palisad i elementów wykończeniowych.",
     },
     {
       title: "Prace ziemne",
       desc: "Korytowanie, niwelacja terenu, przygotowanie podbudowy i prace przygotowawcze.",
-      icon: "⌁",
     },
   ];
 
-  const stats = [
-    ["10+", "lat doświadczenia"],
-    ["500+", "realizacji"],
-    ["100%", "dokładności"],
-    ["24h", "szybka wycena"],
+  const process = [
+    "Kontakt i omówienie zakresu prac",
+    "Bezpłatna wycena oraz doradztwo",
+    "Przygotowanie terenu i podbudowy",
+    "Profesjonalne ułożenie nawierzchni",
   ];
 
-  const benefits = [
+  const opinions = [
     {
-      title: "Dokładność",
-      desc: "Każdy etap prac wykonujemy z dbałością o podłoże, spadki i estetykę wykończenia.",
+      name: "Michał K.",
+      text: "Podjazd wykonany bardzo dokładnie. Wszystko terminowo, czysto i zgodnie z ustaleniami.",
     },
     {
-      title: "Solidne materiały",
-      desc: "Pracujemy na sprawdzonych rozwiązaniach, które zapewniają trwałość na lata.",
+      name: "Anna P.",
+      text: "Świetny kontakt, konkretna wycena i bardzo estetyczny efekt końcowy. Polecam.",
     },
     {
-      title: "Terminowość",
-      desc: "Ustalamy konkretny zakres prac i realizujemy go zgodnie z planem.",
+      name: "Tomasz R.",
+      text: "Firma zna się na rzeczy. Doradzili układ kostki i wykonali całość solidnie.",
     },
-    {
-      title: "Doradztwo",
-      desc: "Pomagamy dobrać układ, kolorystykę i rozwiązania najlepsze dla Twojej posesji.",
-    },
-  ];
-
-  const realizations = [
-    "Podjazd z kostki grafitowej",
-    "Taras przy domu jednorodzinnym",
-    "Chodnik i wejście do posesji",
-    "Plac przed firmą",
   ];
 
   return (
@@ -78,79 +59,82 @@ export default function ArbrukPage() {
         }
 
         section {
-          scroll-margin-top: 90px;
+          scroll-margin-top: 100px;
         }
       `}</style>
 
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#start" className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 shadow-[0_0_35px_rgba(245,158,11,.2)]">
+              <span className="text-3xl font-black text-yellow-400">A</span>
+            </div>
+
+            <div>
+              <p className="text-2xl font-black tracking-tight">ARBRUK</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
+                Usługi brukarskie
+              </p>
+            </div>
+          </a>
+
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-300 lg:flex">
+            <a href="#start" className="text-yellow-400">
+              Start
+            </a>
+            <a href="#onas" className="transition hover:text-yellow-400">
+              O nas
+            </a>
+            <a href="#uslugi" className="transition hover:text-yellow-400">
+              Usługi
+            </a>
+            <a href="#realizacje" className="transition hover:text-yellow-400">
+              Realizacje
+            </a>
+            <a href="#opinie" className="transition hover:text-yellow-400">
+              Opinie
+            </a>
+            <a href="#kontakt" className="transition hover:text-yellow-400">
+              Kontakt
+            </a>
+          </nav>
+
+          <a
+            href={`tel:${phone}`}
+            className="hidden rounded-2xl border border-yellow-400/40 px-6 py-3 font-black text-yellow-400 transition hover:bg-yellow-400 hover:text-black md:inline-flex"
+          >
+            ☎ {phoneText}
+          </a>
+        </div>
+      </header>
+
       <section id="start" className="relative min-h-screen">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(245,158,11,.25),transparent_32%),linear-gradient(120deg,rgba(0,0,0,.98),rgba(0,0,0,.72),rgba(0,0,0,.96))]" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-35" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(245,158,11,.24),transparent_34%),linear-gradient(120deg,rgba(0,0,0,.98),rgba(0,0,0,.74),rgba(0,0,0,.96))]" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1900&auto=format&fit=crop')] bg-cover bg-center opacity-35" />
 
-        <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <a href="#start" className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 shadow-[0_0_35px_rgba(245,158,11,.18)]">
-                <span className="text-3xl font-black text-yellow-400">A</span>
-              </div>
-
-              <div>
-                <p className="text-2xl font-black tracking-tight">ARBRUK</p>
-                <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-                  Usługi brukarskie
-                </p>
-              </div>
-            </a>
-
-            <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-300 lg:flex">
-              <a href="#start" className="text-yellow-400 transition hover:text-yellow-300">
-                Start
-              </a>
-              <a href="#onas" className="transition hover:text-yellow-400">
-                O nas
-              </a>
-              <a href="#uslugi" className="transition hover:text-yellow-400">
-                Usługi
-              </a>
-              <a href="#realizacje" className="transition hover:text-yellow-400">
-                Realizacje
-              </a>
-              <a href="#kontakt" className="transition hover:text-yellow-400">
-                Kontakt
-              </a>
-            </nav>
-
-            <a
-              href={`tel:${phone}`}
-              className="hidden rounded-2xl border border-yellow-400/40 px-6 py-3 font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black md:inline-flex"
-            >
-              ☎ {phoneFormatted}
-            </a>
-          </div>
-        </header>
-
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 pb-24 pt-40 lg:min-h-screen lg:grid-cols-[1.05fr_.95fr]">
+        <div className="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-16 px-6 pb-24 pt-40 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="mb-6 text-sm font-black uppercase tracking-[0.35em] text-yellow-400">
               Profesjonalne usługi brukarskie
             </p>
 
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-              Brukarstwo z dokładnością,{" "}
-              <span className="text-yellow-400">która zostaje na lata.</span>
+            <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+              Nawierzchnie z kostki brukowej{" "}
+              <span className="text-yellow-400">wykonane na lata.</span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300">
-              Wykonujemy podjazdy, tarasy, chodniki, obrzeża i kompleksowe
-              nawierzchnie z kostki brukowej. Stawiamy na solidną podbudowę,
-              estetykę i terminowe wykonanie.
+              ARBRUK wykonuje podjazdy, tarasy, chodniki, obrzeża i kompleksowe
+              nawierzchnie brukarskie. Stawiamy na solidną podbudowę,
+              terminowość i dokładne wykończenie.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#kontakt"
-                className="rounded-2xl bg-yellow-400 px-8 py-4 font-black text-black shadow-[0_0_40px_rgba(245,158,11,.25)] transition hover:scale-105"
+                className="rounded-2xl bg-yellow-400 px-8 py-4 font-black text-black shadow-[0_0_40px_rgba(245,158,11,.28)] transition hover:scale-105"
               >
-                Darmowa wycena
+                Umów darmową wycenę
               </a>
 
               <a
@@ -160,40 +144,42 @@ export default function ArbrukPage() {
                 Zobacz realizacje
               </a>
             </div>
+
+            <div className="mt-14 grid max-w-2xl gap-4 md:grid-cols-3">
+              {[
+                ["10+", "lat doświadczenia"],
+                ["500+", "realizacji"],
+                ["100%", "dokładności"],
+              ].map(([num, label]) => (
+                <div
+                  key={label}
+                  className="rounded-3xl border border-white/10 bg-black/55 p-6 backdrop-blur"
+                >
+                  <p className="text-4xl font-black text-yellow-400">{num}</p>
+                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 rounded-[44px] bg-yellow-400/20 blur-[100px]" />
+            <div className="absolute inset-0 rounded-[46px] bg-yellow-400/20 blur-[100px]" />
 
-            <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur-xl">
-              <div className="h-[520px] rounded-[34px] bg-[url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center" />
+            <div className="relative overflow-hidden rounded-[46px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur-xl">
+              <div className="h-[540px] rounded-[36px] bg-[url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1300&auto=format&fit=crop')] bg-cover bg-center" />
 
               <div className="absolute bottom-10 left-10 right-10 rounded-3xl border border-white/10 bg-black/75 p-6 backdrop-blur">
                 <p className="text-sm uppercase tracking-[0.25em] text-yellow-400">
-                  Bezpłatna wycena
+                  Darmowa wycena
                 </p>
                 <p className="mt-2 text-2xl font-black">
-                  Podjazdy, tarasy, chodniki i kompleksowe realizacje.
+                  Doradzimy najlepsze rozwiązanie dla Twojej posesji.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-black">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-4">
-          {stats.map(([number, label]) => (
-            <div
-              key={label}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-yellow-400/30"
-            >
-              <p className="text-4xl font-black text-yellow-400">{number}</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-zinc-500">
-                {label}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -205,22 +191,20 @@ export default function ArbrukPage() {
             </p>
 
             <h2 className="text-4xl font-black leading-tight md:text-6xl">
-              Solidne wykonanie zaczyna się od dobrze przygotowanego podłoża.
+              Solidna kostka zaczyna się od profesjonalnej podbudowy.
             </h2>
           </div>
 
           <div className="space-y-6 text-lg leading-relaxed text-zinc-400">
             <p>
-              ARBRUK to firma brukarska wykonująca trwałe i estetyczne
-              nawierzchnie dla klientów prywatnych oraz firm. Każdą realizację
-              traktujemy indywidualnie — od przygotowania terenu, przez dobór
-              materiału, aż po dokładne wykończenie.
+              ARBRUK realizuje prace brukarskie dla domów, firm i inwestycji.
+              Każdy projekt zaczynamy od dobrego przygotowania terenu, bo to
+              ono decyduje o trwałości nawierzchni.
             </p>
 
             <p>
-              Naszym celem jest stworzenie nawierzchni, która nie tylko dobrze
-              wygląda, ale też wytrzymuje codzienne użytkowanie przez długie
-              lata.
+              Pomagamy dobrać wzór, kolorystykę i materiały, a następnie
+              wykonujemy całość dokładnie, terminowo i estetycznie.
             </p>
           </div>
         </div>
@@ -232,7 +216,7 @@ export default function ArbrukPage() {
       >
         <div className="mx-auto max-w-7xl">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
-            Nasze usługi
+            Oferta
           </p>
 
           <h2 className="max-w-3xl text-4xl font-black md:text-6xl">
@@ -240,13 +224,13 @@ export default function ArbrukPage() {
           </h2>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <div
                 key={service.title}
                 className="group rounded-[34px] border border-white/10 bg-zinc-950 p-8 transition duration-500 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-[0_0_60px_rgba(245,158,11,.12)]"
               >
-                <div className="mb-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 text-4xl text-yellow-400">
-                  {service.icon}
+                <div className="mb-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-400/10 text-xl font-black text-yellow-400">
+                  0{index + 1}
                 </div>
 
                 <h3 className="text-2xl font-black">{service.title}</h3>
@@ -260,89 +244,124 @@ export default function ArbrukPage() {
         </div>
       </section>
 
-      <section id="realizacje" className="mx-auto max-w-7xl px-6 py-28">
-        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
-              Realizacje
-            </p>
+      <section className="mx-auto max-w-7xl px-6 py-28">
+        <div className="mb-14">
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
+            Jak pracujemy
+          </p>
 
-            <h2 className="text-4xl font-black md:text-6xl">
-              Zobacz przykładowe realizacje.
-            </h2>
-          </div>
-
-          <a
-            href="#kontakt"
-            className="w-fit rounded-2xl border border-white/10 px-6 py-4 font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:bg-white/5 hover:text-white"
-          >
-            Zapytaj o wycenę →
-          </a>
+          <h2 className="text-4xl font-black md:text-6xl">
+            Prosty proces od wyceny do gotowej nawierzchni.
+          </h2>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {realizations.map((item, index) => (
+        <div className="grid gap-5 md:grid-cols-4">
+          {process.map((item, index) => (
             <div
               key={item}
-              className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-900 ${
-                index === 0 ? "lg:col-span-2 lg:row-span-2" : ""
-              }`}
+              className="rounded-[30px] border border-white/10 bg-black p-7"
             >
-              <div
-                className="h-80 bg-cover bg-center transition duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage:
-                    index === 0
-                      ? "url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop')"
-                      : index === 1
-                      ? "url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop')"
-                      : index === 2
-                      ? "url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop')"
-                      : "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop')",
-                }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-sm uppercase tracking-[0.25em] text-yellow-400">
-                  Realizacja
-                </p>
-                <h3 className="mt-2 text-xl font-black">{item}</h3>
-              </div>
+              <p className="text-5xl font-black text-yellow-400">
+                0{index + 1}
+              </p>
+              <p className="mt-8 text-xl font-black">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-zinc-950 px-6 py-28">
+      <section
+        id="realizacje"
+        className="border-y border-white/10 bg-zinc-950 px-6 py-28"
+      >
         <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
-            Dlaczego ARBRUK?
-          </p>
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
+                Realizacje
+              </p>
 
-          <h2 className="max-w-4xl text-4xl font-black md:text-6xl">
-            Profesjonalna realizacja od pierwszego kontaktu do odbioru.
-          </h2>
+              <h2 className="text-4xl font-black md:text-6xl">
+                Efekt, który widać od pierwszego spojrzenia.
+              </h2>
+            </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit, index) => (
+            <a
+              href="#kontakt"
+              className="w-fit rounded-2xl border border-white/10 px-6 py-4 font-bold text-zinc-300 transition hover:border-yellow-400/40 hover:bg-white/5 hover:text-white"
+            >
+              Zapytaj o podobną realizację →
+            </a>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              [
+                "Podjazd premium",
+                "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop",
+              ],
+              [
+                "Taras i wejście",
+                "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+              ],
+              [
+                "Chodnik ogrodowy",
+                "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop",
+              ],
+              [
+                "Plac firmowy",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+              ],
+            ].map(([title, img], index) => (
               <div
-                key={benefit.title}
-                className="rounded-[30px] border border-white/10 bg-black/40 p-7 transition hover:-translate-y-1 hover:border-yellow-400/30"
+                key={title}
+                className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-zinc-900 ${
+                  index === 0 ? "lg:col-span-2 lg:row-span-2" : ""
+                }`}
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-yellow-400/30 text-xl font-black text-yellow-400">
-                  0{index + 1}
+                <div
+                  className="h-80 bg-cover bg-center transition duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url('${img}')` }}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                <div className="absolute bottom-5 left-5 right-5">
+                  <p className="text-sm uppercase tracking-[0.25em] text-yellow-400">
+                    Realizacja
+                  </p>
+                  <h3 className="mt-2 text-xl font-black">{title}</h3>
                 </div>
-
-                <h3 className="text-2xl font-black">{benefit.title}</h3>
-
-                <p className="mt-4 leading-relaxed text-zinc-500">
-                  {benefit.desc}
-                </p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="opinie" className="mx-auto max-w-7xl px-6 py-28">
+        <div className="mb-14">
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
+            Opinie
+          </p>
+
+          <h2 className="text-4xl font-black md:text-6xl">
+            Klienci doceniają dokładność i terminowość.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {opinions.map((opinion) => (
+            <div
+              key={opinion.name}
+              className="rounded-[34px] border border-white/10 bg-zinc-950 p-8"
+            >
+              <p className="text-yellow-400">★★★★★</p>
+              <p className="mt-6 leading-relaxed text-zinc-400">
+                “{opinion.text}”
+              </p>
+              <p className="mt-6 font-black">{opinion.name}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -350,7 +369,7 @@ export default function ArbrukPage() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-black/85" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 rounded-[44px] border border-white/10 bg-black/70 p-8 backdrop-blur-xl md:p-14 lg:grid-cols-[1fr_.9fr]">
+        <div className="relative mx-auto grid max-w-7xl gap-12 rounded-[44px] border border-white/10 bg-black/75 p-8 backdrop-blur-xl md:p-14 lg:grid-cols-[1fr_.9fr]">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.35em] text-yellow-400">
               Kontakt
@@ -371,7 +390,7 @@ export default function ArbrukPage() {
                 href={`tel:${phone}`}
                 className="rounded-2xl bg-yellow-400 px-8 py-4 font-black text-black transition hover:scale-105"
               >
-                ☎ {phoneFormatted}
+                ☎ {phoneText}
               </a>
 
               <a
